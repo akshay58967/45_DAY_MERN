@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Js Objects</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="swiper">
+    <div class="swiper-wrapper" id="skills-wrapper">
+    </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-pagination"></div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    const skills = [
+      { name: 'HTML', proficiency: 'Intermediate', bg: 'https://picsum.photos/id/1015/600/300' },
+      { name: 'CSS', proficiency: 'Beginner', bg: 'https://picsum.photos/id/1016/600/300' },
+      { name: 'JavaScript', proficiency: 'Advanced', bg: 'https://picsum.photos/id/1018/600/300' },
+      { name: 'Python', proficiency: 'Intermediate', bg: 'https://picsum.photos/id/1021/600/300' }
+    ];
+
+    const formattedSkills = skills.map(skill => `${skill.name} (${skill.proficiency})`);
+    console.log(formattedSkills);
+    const wrapper = document.getElementById('skills-wrapper');
+    skills.forEach(skill => {
+      const slide = document.createElement('div');
+      slide.className = 'swiper-slide';
+      slide.style.backgroundImage = `url(${skill.bg})`;
+      slide.textContent = `${skill.name} (${skill.proficiency})`;
+      wrapper.appendChild(slide);
+    });
+
+ 
+    const swiper = new Swiper('.swiper', {
+      loop: true,
+      spaceBetween: 30,
+      effect: "slide",
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
+    });
+  </script>
+</body>
+</html>
