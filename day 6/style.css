@@ -1,0 +1,83 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  width: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: url('img.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+
+.overlay {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+
+.quote-container {
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  padding: 40px 30px;
+  border-radius: 20px;
+  text-align: center;
+  color: white;
+  max-width: 700px;
+  width: 100%;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+  transition: all 0.3s ease;
+}
+
+.quote-text {
+  font-size: 1.8rem;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.quote-author {
+  font-size: 1.2rem;
+  font-style: italic;
+  margin-bottom: 30px;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  color: #e0e0ff;
+}
+
+button {
+  padding: 12px 25px;
+  font-size: 1rem;
+  background-color: #ffffff;
+  color: #333;
+  border: none;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #f0f0f0;
+  transform: scale(1.05);
+}
+
+@media (max-width: 600px) {
+  .quote-text {
+    font-size: 1.3rem;
+  }
+
+  .quote-author {
+    font-size: 1rem;
+  }
+}
